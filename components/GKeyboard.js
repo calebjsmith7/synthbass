@@ -80,9 +80,9 @@ export default function GKeyboard(){
 
       if(note.getVolume() > .5){
         var gaindown = setInterval(()=>{
-          note.setVolume(note.getVolume() - .25);
+          note.setVolume(note.getVolume() - .10);
           console.log(note.getVolume());
-        },125);
+        },50);
  
          setTimeout(()=>{
            clearInterval(gaindown);
@@ -91,6 +91,7 @@ export default function GKeyboard(){
          },500);
       }
       else {
+        note.setVolume(0);
         note.stop();
       }
 
